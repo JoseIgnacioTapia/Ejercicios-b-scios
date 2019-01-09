@@ -75,7 +75,7 @@ def capFinal():
     tasaInteres = float(input('Introduce la tasa de interes: '))
     anos = int(input('Introduce la cantidad de años: '))
 
-    capFinal = capInicial * (1 + tasaInteres / 100) ** anos
+    capFinal = round(capInicial * (1 + tasaInteres / 100) ** anos, 2)
 
     return capFinal
 
