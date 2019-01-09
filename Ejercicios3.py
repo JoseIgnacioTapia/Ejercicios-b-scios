@@ -61,7 +61,7 @@ def rimando():
         print('No riman')
 
 rimando()
-'''
+
 
 
 # Has un programa que pida al usuario una cantidad de dolares,
@@ -80,3 +80,25 @@ def capFinal():
     return capFinal
 
 print(capFinal())
+'''
+
+# Crear un programa que permita calcular el importe de compra total
+# si iguala o supera los $100 se genera un número aleatorio de 1 a 5
+# donde cada valor corresponde un color, blanco sin descuento
+# roja 10%, azul 20%, verde 25%, amarilla 50%. Mostrar el importe final
+
+import random
+
+def descuentos():
+
+	importe = int(input('INTRODUZCA EL TOTAL DE SU COMPRA: '))
+
+	if importe >= 100:
+
+		print('SU GASTO IGUALA O SUPERA LOS $100.00 POR LO TANTO TIENE DESCUENTO')
+
+	else:
+
+		print('SU TOTAL A PAGAR ES DE: ', importe)
+
+descuentos()
