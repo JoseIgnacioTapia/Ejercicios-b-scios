@@ -92,10 +92,46 @@ import random
 def descuentos():
 
 	importe = int(input('INTRODUZCA EL TOTAL DE SU COMPRA: '))
+	dictColor = {'COLOR:': 'DESCUENTO:', 'BOLA BLANCA': 'NO TIENE', 'BOLA ROJA': '10 POR CIENTO', 
+				'BOLA AZUL': '20 POR CIENTO', 'BOLA VERDE': '25 POR CIENTO', 'BOLA AMARILLA': '50 POR CIENTO'}
+
+
 
 	if importe >= 100:
 
 		print('SU GASTO IGUALA O SUPERA LOS $100.00 POR LO TANTO TIENE DESCUENTO')
+		for k, v in dictColor.items():
+			print(k.ljust(25, ' ') + v.rjust(10))
+
+		colorBall = random.randint(1, 5)
+
+		if colorBall == 1:
+
+			print('No tiene descuento. Su total a pagar es', importe)
+
+		elif colorBall == 2:
+ 
+			print('ALEATORIAMENTE OBTUVO UNA BOLA ROJA')
+			print('FELCIDADES, HA GANADO UN 10 POR CIENTO DE DESCUENTO')
+			print('SU NUEVO TOTAL A PAGAR ES: ' + '$' + str(importe - round(importe/10, 2)))
+
+		elif colorBall == 3:
+
+			print('ALEATORIAMENTE OBTUVO UNA BOLA AZUL')
+			print('FELCIDADES, HA GANADO UN 20 POR CIENTO DE DESCUENTO')
+			print('SU NUEVO TOTAL A PAGAR ES: ' + '$' + str(importe - round(importe/5, 2)))
+
+		elif colorBall == 4:
+
+			print('ALEATORIAMENTE OBTUVO UNA BOLA VERDE')
+			print('FELCIDADES, HA GANADO UN 25 POR CIENTO DE DESCUENTO')
+			print('SU NUEVO TOTAL A PAGAR ES: ' + '$' + str(importe - round(importe/4, 2)))
+
+		else:
+
+			print('ALEATORIAMENTE OBTUVO UNA BOLA AMARILLA')
+			print('FELCIDADES, HA GANADO UN 50 POR CIENTO DE DESCUENTO')
+			print('SU NUEVO TOTAL A PAGAR ES: ' + '$' + str(importe - round(importe/2, 2)))
 
 	else:
 
