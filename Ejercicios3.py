@@ -138,7 +138,7 @@ def descuentos():
 		print('SU TOTAL A PAGAR ES DE: ', importe)
 
 descuentos()
-'''
+
 
 
 # Crear un programa que devuelva el total a pagar donde el
@@ -209,3 +209,70 @@ def main():
 	print('TOTAL......................... $', compraTotal)
 
 main()
+'''
+
+
+# El scrip debe calcular el importe por el alquiler de la pelicula más
+# el recargo por demora en devolución segun la tabla dada
+
+def backToThePast():
+
+	print("=======================================================")
+	print("CATEGORIA       PRECIO  CODIGO  RECARGO/DIA DE ATRASO")
+	print("")
+	print("FAVORITOS        $2.50     1             $0.50")
+	print("NUEVOS           $3.00     2             $0.75")
+	print("ESTRENOS         $3.50     3             $1.00")
+	print("SUPER ESTRENOS   $4.00     4             $1.50")
+	print("=======================================================")
+	print("")
+
+	salir = ''
+
+	while salir != 1:
+
+		catPeli = int(input('INTRODUZCA EL CÓDIGO DE LA PELICULA: '))
+
+		diasAtraso = int(input('INTRODUZCA EL NÚMERO DE DÍAS DE ATRASO EN LA DEVOLUCIÓN: '))
+
+		print()
+
+		if catPeli == 1:
+
+			monto = 2.50+(diasAtraso*0.50)
+
+			print('EL TOTAL A PAGAR ES ${0:.2f} DOLARES'.format(monto))
+
+		elif catPeli == 2:
+
+			monto = 3.00+(diasAtraso*0.75)
+
+			print('EL TOTAL A PAGAR ES ${0:.2f} DOLARES'.format(monto))
+
+		elif catPeli == 3:
+
+			monto = 3.50+(diasAtraso*1.00)
+
+			print('EL TOTAL A PAGAR ES ${0:.2f} DOLARES'.format(monto))
+
+		elif catPeli == 4:
+
+			monto = 4.00+(diasAtraso*1.50)
+
+			print('EL TOTAL A PAGAR ES ${0:.2f} DOLARES'.format(monto))
+
+		else:
+
+			print('POR FAVOR INTRODUZCA EL CODIGO CORRECTO.')
+			print()
+
+		try:
+			print('#######################################')
+			salir = int(input('SI DESEA SALIR PRESIONE 1 DE LO CONTRARIO OTRO NÚMERO: '))
+
+		except ValueError:
+
+			print('POR FAVOR INTRODUZCA UN NÚMERO!')
+			print('#######################################')
+
+backToThePast()
