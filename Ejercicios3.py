@@ -159,9 +159,18 @@ def main():
 
 	relacion = {1: 35, 2: 10, 3: 50, 4: 40, 5: 5, 6: 20, 7: 7, 8: 15, 9: 10, 10: 35}
 
-	continuar = 'si'
+	codigoProducto = {1: 'CAMISA', 2: 'CINTURON', 3: 'ZAPATOS', 4: 'PANTALON', 5: 'CALCETINES',
+					  6: 'FALDAS', 7: 'GORRAS', 8: 'SUETER', 9: 'CORBATA', 10: 'CHAQUETA'}
 
-	while continuar == 'si':
+	dictCompras = {}
+
+	continuar = 's'
+
+	listaUnidades = []
+
+	compraTotal = 0
+
+	while continuar.lower() == 's':
 
 		totalProd = 0
 
@@ -169,10 +178,34 @@ def main():
 
 		print('EL PRECIO ES DE $' + str(relacion[cod]))
 
-		unidades = int(input('INTRODUZCA EL NÚMERO DE UNIDADES: ')
+		unidades = int(input('INTRODUZCA EL NÚMERO DE UNIDADES: '))
 
-		totalProd = unidades * relacion[cod]
+		totalProd = float(unidades * relacion[cod])
 
-		print('Total {} por {} unidades es {} '.format())
+		print('Total de {} por {} unidades es ${} '.format(codigoProducto[cod], unidades, totalProd))
+		print()
+
+		dictCompras[codigoProducto[cod]] = totalProd
+
+		listaUnidades.append(unidades)
+
+		continuar = input('DESEA CONTINUAR SI(S) O NO(N): ')
+		print()
+
+		compraTotal += totalProd
+
+	i = 0
+
+	print()
+	print('U ' + 'PRODUCTO' + 21 * " " + 'TOTAL')
+
+	for x, z in dictCompras.items():
+
+		print(str(listaUnidades[i]) + ' ' + x.ljust(29, '.') + '$' + (str(z).rjust(2)))
+
+		i += 1
+
+	print()
+	print('TOTAL......................... $', compraTotal)
 
 main()
