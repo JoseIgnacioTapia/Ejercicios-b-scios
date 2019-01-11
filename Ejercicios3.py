@@ -80,7 +80,7 @@ def capFinal():
     return capFinal
 
 print(capFinal())
-'''
+
 
 # Crear un programa que permita calcular el importe de compra total
 # si iguala o supera los $100 se genera un número aleatorio de 1 a 5
@@ -138,3 +138,41 @@ def descuentos():
 		print('SU TOTAL A PAGAR ES DE: ', importe)
 
 descuentos()
+'''
+
+
+# Crear un programa que devuelva el total a pagar donde el
+# usuario debe elegir el producto por codigo seguna la tabla
+
+def main():
+
+	productoCodigo = {'CAMISA': 1, 'CINTURON': 2, 'ZAPATOS': 3,
+					  'PANTALON': 4, 'CALCETINES': 5, 'FALDAS':6,
+					  'GORRAS': 7, 'SUETER': 8, 'CORBATA': 9, 'CHAQUETA': 10}
+
+	print('ELIJA EL PRODUCTO DESEADO:')
+	print()
+	print('PRODUCTO' + 18*" " + 'CODIGO')
+	print()
+	for k, v in productoCodigo.items():
+		print(k.ljust(30, '.') + (str(v).rjust(2)))
+
+	relacion = {1: 35, 2: 10, 3: 50, 4: 40, 5: 5, 6: 20, 7: 7, 8: 15, 9: 10, 10: 35}
+
+	continuar = 'si'
+
+	while continuar == 'si':
+
+		totalProd = 0
+
+		cod = int(input('INTRODUZCA EL CÓDIGO: '))
+
+		print('EL PRECIO ES DE $' + str(relacion[cod]))
+
+		unidades = int(input('INTRODUZCA EL NÚMERO DE UNIDADES: ')
+
+		totalProd = unidades * relacion[cod]
+
+		print('Total {} por {} unidades es {} '.format())
+
+main()
